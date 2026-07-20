@@ -8,7 +8,7 @@ ai_speed = st.select_slider("난이도",options=["매우 느림", "느림", "보
 creativity = st.slider("점수", 0, 100, 50)
 question = st.text_area("소감", placeholder="소감입니다.")
 age = st.number_input("나이를 입력하세요", min_value=1, max_value=100, value=17)
-question = st.text_area("AI에게 보낼 질문을 입력하세요", placeholder="여기에 질문을 작성해 주세요.")
+question = st.text_area("AI에게 보낼 질문을 입력하세요", placeholder="여기에 소감을 작성해 주세요.")
 
 if st.button("질문 전송하기"):
     if agree:
