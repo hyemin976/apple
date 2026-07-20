@@ -12,10 +12,11 @@ question = st.text_area("AI에게 보낼 질문을 입력하세요", placeholder
 
 if st.button("질문 전송하기"):
     if agree:
-        st.success(f"이름: (user_id)/(ai_model)학년/(tone)반/(ai_speed)")
+        st.success(f"이름: {user_id}/{ai_model}학년/{tone}반/{ai_speed}")
         st.markdown(f"""
         **점수:** {creativity}
-        st.success(f"소감: (question)")
+        st.success(f"소감: {question}")
         """)
         
-        else st.error("⚠️ 동의 항목에 체크해야 전송이 가능합니다.")
+        else:
+        st.error("⚠️ 동의 항목에 체크해야 전송이 가능합니다.")
