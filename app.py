@@ -24,12 +24,12 @@ st.header("👕아이템 조합하기")
 col1, col2 = st.columns(2)
 with col1:
     st.subheader("상의")
-    top_type = st.radio("종류", ["후드티", "셔츠", "맨투맨", "반팔 티셔츠"])
-    top_color = st.select_slider("색상 톤", options=["밝음", "무난함", "어두움"])
+    top_type = st.radio("종류", ["후드티", "셔츠", "맨투맨", "반팔 티셔츠"], key="top_type")
+    top_color = st.select_slider("색상 톤", options=["밝음", "무난함", "어두움"], key="top_color")
     with col2:
         st.subheader("하의")
-    bottom_type = st.radio("종류", ["청바지", "슬랙스", "트레이닝 팬츠", "반바지"])
-    bottom_color = st.select_slider("핏(Fit)", options=["슬림", "레귤러", "오버핏"])
+    bottom_type = st.radio("종류", ["청바지", "슬랙스", "트레이닝 팬츠", "반바지"], key="bottom_type")
+    bottom_color = st.select_slider("핏(Fit)", options=["슬림", "레귤러", "오버핏"], key="bottom_type")
 
 st.header("디테일 추가")
 tab1, tab2 = st.tabs(["신발", "악세서리"])
