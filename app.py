@@ -37,4 +37,4 @@ if st.session_state.end_time != 0:
 
 if st.button("다시 하기", on_click=reset_game)
 else:
-    st.button("종료", on click=reset_game)
+    st.button("종료", st.session_state.end_time = 0          # 종료 시간 초기화)
