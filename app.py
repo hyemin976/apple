@@ -36,4 +36,5 @@ if st.session_state.end_time != 0:
         st.error(f"10초와 {abs(10-diff):.2f}초 차이가 납니다. 다시 도전해보세요!")
 
 if st.button("다시 하기", on_click=reset_game)
-else st.button("종료", on click=reset_game)
+else st.button("종료"):
+on click=reset_game
