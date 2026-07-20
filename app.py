@@ -18,4 +18,4 @@ if st.button("질문 전송하기"):
         st.success(f"소감: (question)")
         """)
         
-        if st.error("⚠️ 동의 항목에 체크해야 전송이 가능합니다.")
+        else st.error("⚠️ 동의 항목에 체크해야 전송이 가능합니다.")
