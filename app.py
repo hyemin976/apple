@@ -15,8 +15,8 @@ if st.button("질문 전송하기"):
         st.success(f"이름: {user_id}/{ai_model}학년/{tone}반/{ai_speed}")
         st.markdown(f"""
         **점수:** {creativity}
-        st.success(f"소감: {question}")
         """)
+        st.success(f"소감: {question}")
         
         else:
         st.error("⚠️ 동의 항목에 체크해야 전송이 가능합니다.")
