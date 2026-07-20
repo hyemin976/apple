@@ -37,4 +37,4 @@ if st.session_state.end_time != 0:
 
 if st.button("다시 하기", on_click=reset_game)
 else:
-    st.button("종료", st.session_state.end_time = 0)
+    st.warning("다시 하기를 눌러주세요!")
