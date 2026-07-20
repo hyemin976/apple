@@ -10,10 +10,8 @@ question = st.text_area("소감", placeholder="소감입니다.")
 
 if st.button("질문 전송하기"):
     if agree:
-        st.success(f"이름: {user_id}/{ai_model}학년/{tone}반/{ai_speed}, 
-        소감: {question}")
-        st.markdown")
-        (f"""
+        st.success(f"이름: {user_id}/{ai_model}학년/{tone}반/{ai_speed}, 소감: {question}")
+        st.markdown(f"""
         **점수:** {creativity}
         """)
     else:
