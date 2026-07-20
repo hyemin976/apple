@@ -13,7 +13,7 @@ def reset_all():
 with st.sidebar:
     st.header("프로필")
     user_name = st.text_input("닉네임")
-    weather = st.selectbox("오늘 날씨", ["맑음", "흐림", "비/눈", "매우 추움"])
+    weather = st.selectbox("오늘 날씨", ["맑음", "흐림", "비/눈", "매우 추움"], key="weather")
     st.markdown("---")
     st.info(f"반가워요, {user_name}님! 오늘 날씨는 '{weather}'이네요.")
 
@@ -35,12 +35,12 @@ st.header("디테일 추가")
 tab1, tab2 = st.tabs(["신발", "악세서리"])
 with tab1:
     st.write("오늘의 발걸음을 책임질신발:")
-    shoes = st.selectbox("신발 선택", ["스니커즈", "운동화", "구두", "슬리퍼"])
+    shoes = st.selectbox("신발 선택", ["스니커즈", "운동화", "구두", "슬리퍼"], key="shoes")
     with st.expander("신발 선택 팁 보기"):
         st.info("너무 튀는 신발은 지양하도록 해요!")
 with tab2:
      st.write("포인트 아이템:")
-     acc = st.multiselect("악세사리 추가", ["모자", "안경", "목걸이", "가방"])
+     acc = st.multiselect("악세사리 추가", ["모자", "안경", "목걸이", "가방"], key="acc")
      with st.expander("액세서리 스타일 팁 보기"):
        st.warning("너무 많은 액세서리는 투머치가 될 수 있어요.")
 
