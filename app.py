@@ -1,5 +1,8 @@
 import streamlit as st
 
+from openai import OpenAI
+ai_client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+
 if 'todo_list' not in st.session_state:
     st.session_state.todo_list = []
 if 'user_motto' not in st.session_state:
@@ -76,6 +79,11 @@ def page_report():
             
 def page_ai_coach():
     st.header("🤖 AI 코치와 대화하기")
+    if "messages" not in st.session_state:
+        st.session_state.messages = [
+            {"role": "system", "content": "너는 사용자의 할 일 목록과 달성 정도를 분석하여 조언하는 열정적인 코치야."
+            사용자가 더 멋진 삶을 살 수 있도록 명확한 조언과 응원해줘."}
+        ]
     prompt = st.text_input("질문을 입력하세요")
     if st.button("보내기"):
         response = ai_client.responses.create(
