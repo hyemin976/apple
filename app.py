@@ -12,8 +12,6 @@ def add_todo():
         st.toast("할 일이 추가되었습니다!")
         st.session_state.todo_input = ""
 
-def page_motto():
-    st.header("📣 1. 오늘의 다짐")
 @st.dialog("오늘의 다짐 수정")
 def edit_motto():
         motto = st.text_input("나의 한 줄 좌우명을 적어주세요")
@@ -30,7 +28,6 @@ def page_motto():
     if st.session_state.motto_updated:
             st.success("새로운 좌우명이 등록되었습니다!")
             st.session_state.motto_updated = False
-            st.success("좌우명이 등록되었습니다!")
     st.markdown("---")
 
 def page_todo():
@@ -75,7 +72,7 @@ def page_report():
 pg = st.navigation([
     st.Page(page_motto, title="오늘의 다짐", icon="📣"),
     st.Page(page_todo, title="오늘의 할일", icon="✅"),
-    st.Page(page_report, title="나의 갓생 지수", icon="📈")])
+    st.Page(page_report, title="나의 갓생 지수", icon="📈")], position="top")
 
 st.title("🌱 갓생 살기 플래너")
 pg.run()
