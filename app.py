@@ -76,6 +76,7 @@ def page_report():
         if st.button("기록 전체 초기화"):
             st.session_state.todo_list = []
             st.rerun()
+            
 def page_ai_coach():
     st.header("🤖 AI 코치와 대화하기")
     prompt = st.text_input("질문을 입력하세요")
