@@ -18,7 +18,7 @@ def page_motto():
     if st.button("다짐 저장"):
         st.session_state.user_motto = motto
         st.success("좌우명이 등록되었습니다!")
-        st.markdown("---")
+    st.markdown("---")
 
 def page_todo():
     st.header("✅ 2. 오늘의 할 일")
@@ -31,16 +31,16 @@ def page_todo():
         st.markdown("---")
         for i in range(len(st.session_state.todo_list)):
             col_task, col_btn, col_status = st.columns([4, 1, 1])
-        with col_task:
+            with col_task:
                 st.write(f"{i+1}. {st.session_state.todo_list[i][0]}")
-        with col_btn:
-        if st.button("완료", key=f"btn_{i}"):
-            st.session_state.todo_list[i][1] = True
-            st.rerun()
-        with col_status:
-        if st.session_state.todo_list[i][1]:
-            st.write("✅ **달성!**")
-            st.markdown("---")
+            with col_btn:
+                if st.button("완료", key=f"btn_{i}"):
+                    st.session_state.todo_list[i][1] = True
+                    st.rerun()
+            with col_status:
+                if st.session_state.todo_list[i][1]:
+                    st.write("✅ **달성!**")
+                    st.markdown("---")
 
 def page_report():
     st.header("📈 3. 나의 갓생 지수")
