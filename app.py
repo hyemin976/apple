@@ -1,8 +1,14 @@
 import streamlit as st
-from openai import OpenAI
+from openai import RateLimitError
 
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+try:
+    response = client.chat.completions.create(
+        model="gpt-4.1-mini",
+        messages=messages
+    )
 
+except Exception as e:
+    st.error(e)
 st.title("🧠 AI 토론 연습")
 
 # -----------------------
