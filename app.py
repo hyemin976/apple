@@ -60,6 +60,6 @@ def page_three():
                     st.session_state.todo_list = []
                     st.rerun()
 pg = st.navigation([
-    st.Page(page_motto, title="오늘의 다짐", icon="📣"),
-    st.Page(page_todo, title="오늘의 할일", icon="✅"),
-    st.Page(page_report, tilte="나의 갓생 지수", icon="📈")])
+    st.Page(page_one, title="오늘의 다짐", icon="📣"),
+    st.Page(page_two, title="오늘의 할일", icon="✅"),
+    st.Page(page_three, tilte="나의 갓생 지수", icon="📈")])
