@@ -13,7 +13,6 @@ def add_todo():
         st.session_state.todo_input = ""
 
 def page_motto():
-    st.title("🌱 갓생 살기 플래너")
     st.header("📣 1. 오늘의 다짐")
     motto = st.text_input("나의 한 줄 좌우명을 적어주세요")
     if st.button("다짐 저장"):
@@ -53,13 +52,17 @@ def page_report():
         for item in st.session_state.todo_list:
             if item[1] == True:
                 count += 1
-                progress = (count / total) * 100
-                st.metric("오늘의 달성률", f"{progress:.1f}%")
-                st.progress(progress / 100)
-                if st.button("기록 전체 초기화"):
-                    st.session_state.todo_list = []
-                    st.rerun()
+            progress = (count / total) * 100
+            st.metric("오늘의 달성률", f"{progress:.1f}%")
+            st.progress(progress / 100)
+            if st.button("기록 전체 초기화"):
+                st.session_state.todo_list = []
+                st.rerun()
+                
 pg = st.navigation([
     st.Page(page_motto, title="오늘의 다짐", icon="📣"),
     st.Page(page_todo, title="오늘의 할일", icon="✅"),
     st.Page(page_report, title="나의 갓생 지수", icon="📈")])
+
+st.title("🌱 갓생 살기 플래너")
+pg.run()
