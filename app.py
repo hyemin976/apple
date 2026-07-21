@@ -19,24 +19,18 @@ difficulty = st.selectbox(
 
 if st.button("토론 시작"):
 
-   prompt = f"""
+    prompt = f"""
 토론 주제는 "{topic}"이다.
 
-사용자의 입장은 "{position}"이다.
+사용자의 입장은 {position}이다.
 
-if position == "찬성":
-    ai_position = "반대"
-elif position == "반대":
-    ai_position = "찬성"
-else:
-    import random
-    position = random.choice(["찬성", "반대"])
-    ai_position = "반대" if position == "찬성" else "찬성"
-    
-너의 입장은 반드시 "{ai_position}"이다.
+난이도는 {difficulty}이다.
 
-먼저 자신의 주장 3개를 제시하고,
-마지막에 "당신의 의견은 무엇인가요?"라고 질문하라.
+사용자와 반대 입장에서 주장 3개를 만들어라.
+
+마지막에는
+'당신의 의견은 무엇인가요?'
+라고 질문해라.
 """
 
     try:
