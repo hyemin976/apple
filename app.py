@@ -12,6 +12,8 @@ def add_todo():
         st.toast("할 일이 추가되었습니다!")
         st.session_state.todo_input = ""
 
+def page_motto():
+    st.header("📣 1. 오늘의 다짐")
 @st.dialog("오늘의 다짐 수정")
 def edit_motto():
         motto = st.text_input("나의 한 줄 좌우명을 적어주세요")
