@@ -19,14 +19,12 @@ difficulty = st.selectbox(
 
 if st.button("토론 시작"):
 
-    prompt = f"""
+   prompt = f"""
 토론 주제는 "{topic}"이다.
 
-사용자의 입장은 {position}이다.
+사용자의 입장은 "{position}"이다.
 
-난이도는 {difficulty}이다.
-
-너의 입장은 반드시 사용자의 입장과 반대이다.
+너의 입장은 반드시 "{ai_position}"이다.
 
 절대로 사용자의 편을 들지 말고,
 항상 "{ai_position}" 입장에서만 토론하라.
